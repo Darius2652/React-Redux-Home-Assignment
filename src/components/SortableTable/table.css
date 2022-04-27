@@ -1,0 +1,98 @@
+.table-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+th, td {
+  padding: 0.8em;
+  cursor: default;
+}
+
+th:not(:last-child) {
+  cursor: e-resize;
+}
+
+td {
+  cursor: s-resize;
+}
+
+.las {
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.las:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+tr {
+  background-color: #f6f6f6;
+  transition: background-color 0.1s ease;
+}
+
+body:active tr {
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+body > tr {
+  transition: transform 0s linear !important;
+}
+
+tr:hover {
+  background-color: #eee;
+}
+
+td {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: right;
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+  margin: 1px;
+  width: 135px;
+  text-align: center;
+  border-top: solid 1px #eee;
+}
+
+.td-worker-name {
+  width: 303px;
+  text-align: left;
+}
+
+.td-id {
+  width: 160px;
+  padding-right: 15px;
+}
+
+.status-dot {
+  display: inline-block;
+  height: 0.75em;
+  width: 0.75em;
+  border-radius: 1em;
+  margin: 0 0.5em;
+}
+
+.status-dot-green {
+  background-color: var(--color-green);
+}
+
+.status-dot-orange {
+  background-color: var(--color-orange);
+}
