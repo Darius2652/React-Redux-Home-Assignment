@@ -1,5 +1,19 @@
 # Ex.Co Candidate Home Test
 
+#### Final preview of the app
+
+![image](https://user-images.githubusercontent.com/19341311/165591588-d508897b-14c3-45f2-bc87-8954903697f9.png)
+
+##### A short recording showing the final version in action
+
+https://user-images.githubusercontent.com/19341311/165593030-ea3a84fd-da12-4877-b4e0-dd86ebda4ed7.mp4
+
+----
+
+### Original README
+
+# Ex.Co Candidate Home Test
+
 ![image](https://user-images.githubusercontent.com/12518219/158358870-63692f07-741a-4602-b865-171f27afad58.png)
 
 This repo contains a basic React app with a table component listing some mock work logs. 
