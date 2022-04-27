@@ -6,19 +6,18 @@ const tableReducerFactory = (defaultColumns = [], defaultRows = []) => {
   // If found, sort all matching elements accordingly, and place any new elements at the end.
   //
 
-  let rowsOrder = JSON.parse(localStorage.getItem('tablestore:row-order') || 'null');
+  let rowOrder = JSON.parse(localStorage.getItem('tablestore:row-order') || 'null');
   let columnOrder = JSON.parse(localStorage.getItem('tablestore:column-order') || 'null');
 
-  if(rowsOrder) {
+  if(rowOrder) {
     let orderedRows = new Array(defaultRows.length);
     for(let i = 0; i < defaultRows.length; i++) {
       let row = defaultRows[i];
-      let index = rowsOrder.indexOf(uniqueRowIdentifier(row));
+      let index = rowOrder.indexOf(uniqueRowIdentifier(row));
       if(index > -1) {
         orderedRows[index] = (defaultRows.splice(i--, 1)[0]);
-        delete rowsOrder[index];
+        delete rowOrder[index];
       }
-      console.log(orderedRows);
     }
     defaultRows = [orderedRows, defaultRows].flat();
   }
@@ -26,8 +25,11 @@ const tableReducerFactory = (defaultColumns = [], defaultRows = []) => {
   if(columnOrder) {
     let orderedColumns = new Array(defaultColumns.length);
     for(let i = 0; i < defaultColumns.length; i++) {
-      if(columnOrder[defaultColumns[i].id]) {
-        orderedColumns[columnOrder[defaultColumns[i].id]] = (defaultColumns.splice(i--, 1)[0]);
+      let column = defaultColumns[i];
+      let index = columnOrder.indexOf(column.field);
+      if(index > -1) {
+        orderedColumns[index] = (defaultColumns.splice(i--, 1)[0]);
+        delete columnOrder[index];
       }
     }
     defaultColumns = [orderedColumns, defaultColumns].flat();
