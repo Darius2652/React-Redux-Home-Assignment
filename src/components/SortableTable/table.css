@@ -9,6 +9,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 480px) {
+  .table-container {
+    font-size: 0.7em;
+  }
+}
+
 .table-wrapper {
   max-width: 100%;
   overflow-x: auto;
@@ -60,12 +66,11 @@ td {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.9em;
+  line-height: 1.2em;
   text-align: right;
   letter-spacing: 0.03em;
   text-transform: capitalize;
-  margin: 1px;
   width: 135px;
   text-align: center;
   border-top: solid 1px #eee;

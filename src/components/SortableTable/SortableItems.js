@@ -37,8 +37,8 @@ function SortableItems({ rows, columns, onSortEnd }) {
       rows={rows}
       columns={columns}
       shouldCancelStart={function(e) {
-        // Prevent sort behaviour when clicking on the Action buttons
-        if (e.target.classList.contains('las')) {
+        // Prevent sort behaviour when clicking on the Action buttons, or when on a mobile
+        if (window.innerWidth < 481 || e.target.classList.contains('las')) {
           return true;
         }
       }}
