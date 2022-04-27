@@ -30,6 +30,8 @@ const SortableTable = ({ store }) => {
     let columnOrder = {};
     store.getState().columns.forEach((c, i) => columnOrder[c] = i);
     localStorage.setItem('tablestore:column-order', JSON.stringify(columnOrder));
+
+    ColumnSortAnimator(oldIndex, newIndex);
   };
 
   return (
